@@ -16,7 +16,7 @@ public class Main {
         try {
             check(login, password, confirmPassword);
         } catch (WrongLoginException | WrongPasswordException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
