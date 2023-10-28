@@ -1,7 +1,10 @@
+
 import Exceptions.WrongLoginException;
 import Exceptions.WrongPasswordException;
 
 import java.util.Scanner;
+
+import static Checker.Checker.check;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class Main {
         String confirmPassword = scanner.next();
 
         try {
-            Checker.check(login, password, confirmPassword);
+            check(login, password, confirmPassword);
         } catch (WrongLoginException | WrongPasswordException e) {
             throw new RuntimeException(e);
         }

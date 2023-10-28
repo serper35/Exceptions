@@ -1,3 +1,5 @@
+package Checker;
+
 import Exceptions.WrongLoginException;
 import Exceptions.WrongPasswordException;
 
@@ -7,7 +9,7 @@ import java.util.regex.Pattern;
 public class Checker {
     public static void check(String login, String password, String confirmPassword) {
 
-        Pattern pattern = Pattern.compile("^[^_][a-zA-Z0-9_]{1,19}");
+        Pattern pattern = Pattern.compile("^[\\w][a-zA-Z0-9_]{1,19}");
         Matcher logMatcher = pattern.matcher(login);
         Matcher passMatcher = pattern.matcher(password);
 
